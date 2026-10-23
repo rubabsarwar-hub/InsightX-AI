@@ -28,7 +28,7 @@ import {
   Tooltip,
 } from "recharts";
 
-const API_URL = "";
+const API_URL = "http://127.0.0.1:8000";
 
 const money = (value) =>
   Number(value || 0).toLocaleString("en-PK", {
@@ -709,6 +709,24 @@ function App() {
 
   return (
     <main className="app-shell">
+
+      <aside className="sidebar">
+  <div className="sidebar-brand">
+    InsightX <span>AI</span>
+  </div>
+
+  <p className="sidebar-label">MAIN MENU</p>
+
+  <a className="active" href="#dashboard">Dashboard</a>
+  <a href="#products">Products</a>
+  <a href="#sales">Sales</a>
+  <a href="#analytics">Analytics</a>
+  <a href="#forecast">Forecasting</a>
+  <a href="#stock-alerts">Stock Alerts</a>
+
+  <p className="sidebar-label">SYSTEM</p>
+  <a href="#business-insights">Business Insights</a>
+</aside>
       
       <nav className="navbar">
         <div className="brand">
@@ -720,7 +738,7 @@ function App() {
       </nav>
 
       
-      <section className="hero dashboard-hero">
+      <section id="dashboard" className="hero dashboard-hero">
         <span className="eyebrow">BUSINESS OVERVIEW</span>
 
         <h1>
@@ -806,7 +824,7 @@ function App() {
       </section>
 
       
-      <section className="panel inventory-alert-panel">
+      <section id="stock-alerts" className="panel inventory-alert-panel">
         <div className="panel-heading">
           <div>
             <span className="eyebrow">INVENTORY MONITORING</span>
@@ -948,7 +966,9 @@ function App() {
           </form>
         </article>
 
-        <article className="panel products-panel">
+        
+<article id="products" className="panel products-panel">
+
           <div className="panel-heading">
             <div>
               <span className="eyebrow">LIVE DATABASE RECORDS</span>
@@ -1184,7 +1204,7 @@ function App() {
       </section>
 
       
-      <section className="panel sale-entry-panel">
+      <section id="sales" className="panel sale-entry-panel">
         <div className="panel-heading">
           <div>
             <span className="eyebrow">SALES MANAGEMENT</span>
@@ -1298,7 +1318,7 @@ function App() {
       </section>
 
       
-      <section className="charts-grid">
+      <section id="analytics" className="charts-grid">
         <article className="panel chart-panel">
           <div className="panel-heading">
             <div>
@@ -1389,7 +1409,7 @@ function App() {
       <SalesAnalytics sales={sales} />
 
       
-      <section className="panel forecast-panel">
+      <section id="forecast" className="panel forecast-panel">
         <div className="panel-heading">
           <div>
             <span className="eyebrow">PREDICTIVE ANALYTICS</span>
@@ -1527,7 +1547,7 @@ function App() {
       </section>
 
       
-      <section className="panel insights-panel">
+      <section id="business-insights" className="panel insights-panel">
         <div className="panel-heading">
           <div>
             <span className="eyebrow">SMART BUSINESS ANALYTICS</span>
