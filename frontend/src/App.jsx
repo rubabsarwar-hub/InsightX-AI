@@ -28,7 +28,9 @@ import {
   Tooltip,
 } from "recharts";
 
-const API_URL = "http://127.0.0.1:8000";
+// const API_URL = "http://127.0.0.1:8000";
+
+const API_URL = import.meta.env.VITE_API_URL || "https://insightx-ai.de1.netrun.io";
 
 const money = (value) =>
   Number(value || 0).toLocaleString("en-PK", {
