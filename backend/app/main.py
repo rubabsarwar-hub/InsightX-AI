@@ -22,6 +22,7 @@ app = FastAPI(
 )
 
 
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -29,11 +30,14 @@ app.add_middleware(
         "http://localhost:5176",
         "http://127.0.0.1:5173",
         "http://127.0.0.1:5176",
+        "https://insightx-ai.pages.dev",
+        "https://f0cd3a2a.insightx-ai.pages.dev",
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 
 
