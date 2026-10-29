@@ -11,8 +11,8 @@ from sqlalchemy import text
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
 
-from app.database import engine, Base
-from app.models import Product, Sale
+from .database import engine, Base
+from .models import Product, Sale
 
 
 app = FastAPI(
@@ -22,15 +22,16 @@ app = FastAPI(
 )
 
 
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        "https://insightx-ai.pages.dev",
+        "https://f0cd3a2a.insightx-ai.pages.dev",
         "http://localhost:5173",
         "http://localhost:5176",
         "http://127.0.0.1:5173",
         "http://127.0.0.1:5176",
-        "https://insightx-ai.pages.dev",
-        "https://f0cd3a2a.insightx-ai.pages.dev",
     ],
     allow_credentials=True,
     allow_methods=["*"],
